@@ -1,0 +1,111 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/tms/jwt/api/login",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7128
+        }
+      ],
+      "UpstreamPathTemplate": "/tms/jwt/api/login",
+      "UpstreamHttpMethod": [
+        "Post"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/userservice/api/users",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7016
+        }
+      ],
+      "UpstreamPathTemplate": "/userservice/api/users",
+      "UpstreamHttpMethod": [
+        "Post"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/userservice/api/users/{userId}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7016
+        }
+      ],
+      "UpstreamPathTemplate": "/userservice/api/users/{userId}",
+      "UpstreamHttpMethod": [
+        "Get"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/userservice/api/tasks",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7016
+        }
+      ],
+      "UpstreamPathTemplate": "/userservice/api/tasks",
+      "UpstreamHttpMethod": [
+        "Post"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/userservice/api/tasks/{taskId}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7016
+        }
+      ],
+      "UpstreamPathTemplate": "/userservice/api/tasks/{taskId}",
+      "UpstreamHttpMethod": [
+        "Put",
+        "Get",
+        "Delete"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/taskassignmentservice/api/task-assignments",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7212
+        }
+      ],
+      "UpstreamPathTemplate": "/taskassignmentservice/api/task-assignments",
+      "UpstreamHttpMethod": [
+        "Post"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/taskassignmentservice/api/task-assignments/{assignmentId}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7212
+        }
+      ],
+      "UpstreamPathTemplate": "/taskassignmentservice/api/task-assignments/{assignmentId}",
+      "UpstreamHttpMethod": [
+        "Put",
+        "Get",
+        "Delete"
+      ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:7278",
+    "RequestIdKey": "OcRequestId",
+    "AdministrationPath": "/administration"
+  }
+}
